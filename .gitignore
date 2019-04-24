@@ -50,3 +50,9 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+# Overbearing Burgers files
+src/IP.BIN
+src/cd_root/
+overbearing.bin
+overbearing.cdi
