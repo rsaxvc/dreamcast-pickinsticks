@@ -13,6 +13,6 @@ void gamelogic_render();
 
 // provides a one-chance to detect scoring
 int gamelogic_hasScored( Rectangle* playerBox );
-int gamelogic_hasLost( Rectangle* playerBox );
+int gamelogic_hasWon( int score );
 
 #endif

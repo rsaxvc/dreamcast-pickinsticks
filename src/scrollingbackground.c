@@ -10,7 +10,7 @@
 #define FRONT_WIDTH 800
 #define FRONT_HEIGHT 1 * ( ( FRONT_WIDTH * FRONT_TEX_HEIGHT ) / FRONT_TEX_WIDTH )
 
-pvr_ptr_t back_tex, grass_tex;
+pvr_ptr_t back_tex;
 
 long p_backgroundX;
 long p_frontLayerX;
@@ -24,9 +24,6 @@ void scrollingbackground_init() {
     back_tex = pvr_mem_malloc( LAYER_TEX_WIDTH * LAYER_TEX_HEIGHT * 2 );
     png_to_texture("/rd/background.png", back_tex, PNG_NO_ALPHA);
 
-	grass_tex = pvr_mem_malloc( FRONT_TEX_WIDTH * FRONT_TEX_HEIGHT * 2 );
-    png_to_texture("/rd/grass.png", grass_tex, PNG_FULL_ALPHA);
-	
 	scrollingbackground_reset();
 }
 
@@ -59,25 +56,7 @@ void p_drawBackground( int x ) {
 		);
 }
 
-void p_drawFront( int x ) {
-	draw_polygon( 
-		x, 
-		LAYER_HEIGHT - FRONT_HEIGHT, 
-		FRONT_WIDTH + x, 
-		LAYER_HEIGHT, 
-		3, 
-		grass_tex, 
-		FRONT_TEX_WIDTH, 
-		FRONT_TEX_HEIGHT, 
-		PVR_LIST_TR_POLY, 
-		PVR_TXRFMT_ARGB4444
-		);
-}
-
 void scrollingbackground_render() {
 	p_drawBackground( p_backgroundX );
 	p_drawBackground( p_backgroundX + LAYER_WIDTH );
-
-	p_drawFront( p_frontLayerX );
-	p_drawFront( p_frontLayerX + FRONT_WIDTH );
 }

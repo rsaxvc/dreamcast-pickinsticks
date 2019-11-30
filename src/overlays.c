@@ -22,7 +22,7 @@ void p_renderAuthor() {
 	textoutput_print( 
 		SCORE_X + 9,  
 		SCORE_Y - 17, 
-		"by Sebastian Mihai", 
+		"by Richard Allen", 
 		SMALL
 		);
 }

@@ -51,8 +51,8 @@ Module.symvers
 Mkfile.old
 dkms.conf
 
-# Overbearing Burgers files
+# Pickin Sticks files
 src/IP.BIN
 src/cd_root/
-overbearing.bin
-overbearing.cdi
+pickinsticks.bin
+pickinsticks.cdi
